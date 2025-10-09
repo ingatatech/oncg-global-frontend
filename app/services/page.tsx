@@ -54,9 +54,9 @@ export default function ServicesPage() {
         <div className="relative container px-6 mx-auto z-10">
           <motion.div
             className="text-left max-w-6xl"
-            initial="hidden"
-            animate="visible"
-            transition={{ staggerChildren: 0.2 }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
           >
             <motion.div
               variants={fadeInUp}
