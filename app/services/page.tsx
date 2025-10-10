@@ -13,32 +13,39 @@ export default function ServicesPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-
-
-  // Find selected service or use first one
   const currentServiceData = serviceSlug
-    ? servicesData.find(s => s.slug === serviceSlug)
+    ? servicesData.find((s) => s.slug === serviceSlug)
     : null;
 
-  // Single Service View
+  // ========= Split text into 2 paragraphs =========
+  const getTwoParagraphs = (text: string) => {
+    if (!text) return ["", ""];
+    const sentences = text.split(/(?<=\.)\s+/);
+    const half = Math.ceil(sentences.length / 2);
+    return [
+      sentences.slice(0, half).join(" "),
+      sentences.slice(half).join(" "),
+    ];
+  };
+
   if (currentServiceData) {
+    const [firstParagraph, secondParagraph] = getTwoParagraphs(currentServiceData.details);
+
     return (
       <div className="bg-white">
         {/* ================= HERO SECTION ================= */}
         <section className="relative py-8 flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
           {/* Animated Background Elements */}
-          <motion.div 
-            className="absolute inset-0 opacity-20"
-          >
+          <motion.div className="absolute inset-0 opacity-20">
             <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{animationDelay: '4s'}}></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
           </motion.div>
-          
+
           {/* Overlay Circles */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48 animate-pulse" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full translate-y-32 -translate-x-32" />
-          
+
           {/* Floating Particles */}
           <div className="absolute inset-0">
             {[...Array(20)].map((_, i) => (
@@ -85,12 +92,10 @@ export default function ServicesPage() {
                 {currentServiceData.title}
               </motion.h1>
 
-              <motion.p
-                variants={fadeInUp}
-                className="text-lg text-gray-200 mb-8 max-w-6xl"
-              >
-                {currentServiceData.details}
-              </motion.p>
+              <motion.div variants={fadeInUp} className="text-lg text-gray-200 mb-8 max-w-6xl space-y-6">
+                <p>{firstParagraph}</p>
+                <p>{secondParagraph}</p>
+              </motion.div>
 
               {/* View More Details Button */}
               <motion.a
@@ -105,7 +110,7 @@ export default function ServicesPage() {
               </motion.a>
             </motion.div>
           </div>
-          
+
           <div className="absolute left-0 right-0 bottom-0 z-20 pointer-events-none -mb-3">
             <svg
               viewBox="0 0 1920 80"
