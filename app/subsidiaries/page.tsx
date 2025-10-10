@@ -4,9 +4,9 @@ import { useSearchParams } from "next/navigation"
 import { ExternalLink, Sparkles, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { Suspense, useRef } from "react"
 
-export default function SubsidiaryPage() {
+function SubsidiaryPageContent () {
   const searchParams = useSearchParams()
   const companySlug = searchParams.get("company")
   const heroRef = useRef(null)
@@ -226,4 +226,13 @@ export default function SubsidiaryPage() {
     
     </div>
   )
+}
+
+
+export default function SubsidiaryPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading subsidiary...</div>}>
+      <SubsidiaryPageContent />
+    </Suspense>
+  );
 }

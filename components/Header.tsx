@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { ChevronDown, X, Menu, Plus, Minus, ArrowRight, Sparkles } from "lucide-react"
+import { ChevronDown, X, Menu, Plus, Minus, ArrowRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { servicesData } from "@/lib/data/services"
 

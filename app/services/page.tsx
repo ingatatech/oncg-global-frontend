@@ -3,8 +3,9 @@ import { Sparkles, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { servicesData } from '@/lib/data/services';
+import { Suspense } from 'react';
 
-export default function ServicesPage() {
+ function ServicesPageContent() {
   const searchParams = useSearchParams();
   const serviceSlug = searchParams.get('service');
 
@@ -127,4 +128,13 @@ export default function ServicesPage() {
   }
 
   return null;
+}
+
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading Services...</div>}>
+      <ServicesPageContent />
+    </Suspense>
+  );
 }
