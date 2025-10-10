@@ -207,7 +207,7 @@ export default function SubsidiaryPage() {
                 href={subsidiary.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-white text-primary px-8 py-3 rounded-full font-semibold text-white transition"
+                className="inline-flex items-center space-x-2 bg-white text-primary px-8 py-3 rounded-full font-semibold transition"
               >
                 <span>Visit Website</span>
                 <ExternalLink className="w-5 h-5" />

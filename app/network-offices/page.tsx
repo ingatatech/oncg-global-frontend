@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Building2, Users, ArrowUpRight } from "lucide-react"
+import { MapPin, Phone, Mail, Building2,  ArrowUpRight } from "lucide-react"
 
 export default function NetworkOfficesPage() {
   const [selectedRegion, setSelectedRegion] = useState("all")
@@ -13,7 +13,6 @@ export default function NetworkOfficesPage() {
 
   const offices = [
     {
-      region: "East Africa",
       country: "Rwanda",
       city: "Kigali",
       address: "KG 9 Ave, Nyarugenge District",
@@ -23,7 +22,6 @@ export default function NetworkOfficesPage() {
       employees: 150
     },
     {
-      region: "East Africa",
       country: "Kenya",
       city: "Nairobi",
       address: "Westlands Road, Nairobi",
@@ -32,7 +30,6 @@ export default function NetworkOfficesPage() {
       employees: 120
     },
     {
-      region: "East Africa",
       country: "Uganda",
       city: "Kampala",
       address: "Kampala Road, Central Division",
@@ -41,7 +38,6 @@ export default function NetworkOfficesPage() {
       employees: 85
     },
     {
-      region: "East Africa",
       country: "Tanzania",
       city: "Dar es Salaam",
       address: "Ali Hassan Mwinyi Road",
@@ -50,7 +46,6 @@ export default function NetworkOfficesPage() {
       employees: 95
     },
     {
-      region: "West Africa",
       country: "Nigeria",
       city: "Lagos",
       address: "Victoria Island, Lagos",
@@ -59,7 +54,6 @@ export default function NetworkOfficesPage() {
       employees: 180
     },
     {
-      region: "West Africa",
       country: "Ghana",
       city: "Accra",
       address: "Airport Residential Area",
@@ -68,7 +62,6 @@ export default function NetworkOfficesPage() {
       employees: 110
     },
     {
-      region: "Southern Africa",
       country: "South Africa",
       city: "Johannesburg",
       address: "Sandton City, Johannesburg",
@@ -77,7 +70,6 @@ export default function NetworkOfficesPage() {
       employees: 200
     },
     {
-      region: "Southern Africa",
       country: "Zambia",
       city: "Lusaka",
       address: "Cairo Road, Lusaka",
@@ -87,11 +79,11 @@ export default function NetworkOfficesPage() {
     }
   ]
 
-  const regions = ["all", ...Array.from(new Set(offices.map(office => office.region)))]
+  const regions = ["all", ...Array.from(new Set(offices.map(office => office.country)))]
 
   const filteredOffices = selectedRegion === "all" 
     ? offices 
-    : offices.filter(office => office.region === selectedRegion)
+    : offices.filter(office => office.country === selectedRegion)
 
 
   return (
@@ -163,10 +155,9 @@ export default function NetworkOfficesPage() {
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <MapPin className="w-5 h-5 text-blue-600" />
-                        <span className="text-sm font-medium text-gray-500">{office.region}</span>
+                        <span className="text-sm font-medium text-gray-500">{office.city}</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900">{office.city}</h3>
-                      <p className="text-gray-600">{office.country}</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{office.country}</h3>
                     </div>
                     {office.isHeadquarters && (
                       <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">
@@ -201,10 +192,7 @@ export default function NetworkOfficesPage() {
 
                   {/* Footer */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-gray-400" />
-                      <span className="text-sm text-gray-600">{office.employees} employees</span>
-                    </div>
+                   
                     <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
                       Get Directions
                       <ArrowUpRight className="w-4 h-4" />

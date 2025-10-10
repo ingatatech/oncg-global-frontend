@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { ChevronDown, X, Menu, Plus, Minus } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { servicesData } from "@/lib/data/services"
 
 export default function Header() {
   const [activeService, setActiveService] = useState<string | null>(null)
@@ -31,15 +32,6 @@ export default function Header() {
   const toggleServicesDropdown = () => {
     setActiveService(activeService === "services" ? null : "services")
   }
-
-  // Define your services with their slugs
-  const services = [
-    { name: "Audit & Assurance", slug: "audit-assurance" },
-    { name: "Tax Advisory", slug: "tax-advisory" },
-    { name: "Business Consulting", slug: "business-consulting" },
-    { name: "Risk Management", slug: "risk-management" },
-    { name: "Financial Advisory", slug: "financial-advisory" },
-  ]
 
   // Define subsidiaries with their slugs and external URLs
   const subsidiaries = [
@@ -100,7 +92,7 @@ export default function Header() {
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-50">
                     <div className="p-2">
                       <div className="pt-2">
-                        {services.map((service) => (
+                        {servicesData.map((service) => (
                           <Link
                             key={service.slug}
                             href={`/services?service=${service.slug}`}
@@ -108,7 +100,7 @@ export default function Header() {
                             className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-colors"
                           >
                             <div>
-                              <h3 className="font-medium text-sm">{service.name}</h3>
+                              <h3 className="font-medium text-sm">{service.title}</h3>
                             </div>
                           </Link>
                         ))}
@@ -301,14 +293,14 @@ export default function Header() {
                           className="overflow-hidden"
                         >
                           <div className="pl-4 pt-2 space-y-1">
-                            {services.map((service) => (
+                            {servicesData.map((service) => (
                               <Link
                                 key={service.slug}
                                 href={`/services?service=${service.slug}`}
                                 onClick={closeMobileMenu}
                                 className="block p-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
                               >
-                                {service.name}
+                                {service.title}
                               </Link>
                             ))}
                           </div>

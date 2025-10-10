@@ -194,10 +194,9 @@ From socio-economic research and data analytics to business consulting, IT solut
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { title: "Pan-African Expertise", desc: "Deep understanding of African markets and contexts", stat: "15+ Countries" },
-              { title: "Evidence-Based Approach", desc: "Data-driven insights for informed decision-making", stat: "1000+ Projects" },
               { title: "Multidisciplinary Team", desc: "Experts across consulting, research, and technology", stat: "50+ Specialists" },
               { title: "Proven Impact", desc: "Measurable results for governments and organizations", stat: "98% Satisfaction" },
             ].map((item, index) => (
@@ -209,7 +208,7 @@ From socio-economic research and data analytics to business consulting, IT solut
                 transition={{ delay: index * 0.15 }}
                 className="text-center"
               >
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 transition-all">
+                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 transition-all h-[180px] flex flex-col items-center justify-center">
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-white bg-clip-text text-transparent mb-3">
                     {item.stat}
                   </div>
@@ -273,10 +272,12 @@ From socio-economic research and data analytics to business consulting, IT solut
 
       {/* ================= OUR APPROACH ================= */}
       <section className="py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <div className="absolute top-20 right-1/4 w-72 h-72 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-        </div>
-
+        <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/60 to-white/95"
+              style={{ mixBlendMode: "multiply" }}
+            />
+          </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -328,7 +329,7 @@ From socio-economic research and data analytics to business consulting, IT solut
                     {phase.step}
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-white">{phase.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{phase.desc}</p>
+                  <p className="text-gray-900 text-sm leading-relaxed">{phase.desc}</p>
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
