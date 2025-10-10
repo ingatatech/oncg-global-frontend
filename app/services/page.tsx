@@ -34,7 +34,7 @@ import { Suspense } from 'react';
 
     return (
       <div className="bg-white">
-        {/* ================= HERO SECTION ================= */}
+        {/* ================= HERO SECTION ====================== */}
         <section className="relative py-8 flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
           {/* Animated Background Elements */}
           <motion.div className="absolute inset-0 opacity-20">
