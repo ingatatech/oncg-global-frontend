@@ -103,11 +103,11 @@ export default function HomePage() {
 From socio-economic research and data analytics to business consulting, IT solutions, and capacity building, we partner with governments, private institutions, and development agencies across Africa to create sustainable, data-driven growth and measurable impact.
             </motion.p>
 
-            <motion.div variants={fadeInUp}  className="flex flex-col sm:flex-row justify-center gap-4">
+            <motion.div variants={fadeInUp}  className="flex flex-col sm:flex-row  gap-4">
               <ServicesClickModal />
               <Link
                 href="/contact-us"
-                className="border border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold transition w"
+                className="border w-36 border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold transition w"
               >
                 Get in Touch
               </Link>

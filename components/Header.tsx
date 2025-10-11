@@ -38,25 +38,21 @@ export default function Header() {
       name: "Oncg Ltd", 
       slug: "oncg-ltd",
       description: "Audit & Financial Services",
-      icon: "🏢"
     },
     { 
       name: "Skills Hub International Ltd", 
       slug: "skills-hub-international",
       description: "Training & Development",
-      icon: "📚"
     },
     { 
       name: "Cantours Analytics Ltd", 
       slug: "cantours-analytics",
       description: "Data & Analytics Solutions",
-      icon: "📊"
     },
     { 
       name: "Ingata Technologies Ltd", 
       slug: "ingata-technologies",
       description: "IT Solutions & Innovation",
-      icon: "⚡"
     },
   ]
 
@@ -102,12 +98,16 @@ export default function Header() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full left-1/3 -translate-x-1/2 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl z-50 border border-gray-100 overflow-hidden"
                   >
-                    {/* Gradient Header */}
-                    <div className="bg-primary p-2 text-white flex items-center justify-center">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <h3 className="text-xl font-bold text-center">Our Services</h3>
-                      </div>
-                    </div>
+                               {/* Header */}
+            <div className="bg-primary px-4 py-3 text-white flex items-center justify-between">
+              <h2 className="font-semibold text-lg">Our Services</h2>
+              <button
+                onClick={() => setActiveService(null)}
+                className="p-2 hover:bg-white/20 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <X className="w-6 h-6" strokeWidth={2.5} />
+              </button>
+            </div>
 
                     {/* Services Grid */}
                     <div className="p-4 max-h-[500px] overflow-y-auto">
@@ -393,7 +393,7 @@ export default function Header() {
                                 onClick={closeMobileMenu}
                                 className="flex items-center space-x-3 p-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition-colors group"
                               >
-                                <span className="text-lg">{subsidiary.icon}</span>
+                                {/* <span className="text-lg">{subsidiary.icon}</span> */}
                                 <div className="flex-1">
                                   <div className="font-medium">{subsidiary.name}</div>
                                   <div className="text-xs text-gray-500">{subsidiary.description}</div>
