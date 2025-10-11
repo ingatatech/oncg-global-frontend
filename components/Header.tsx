@@ -98,7 +98,7 @@ export default function Header() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full left-1/3 -translate-x-1/2 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl z-50 border border-gray-100 overflow-hidden"
                   >
-                               {/* Header */}
+              {/* Header */}
             <div className="bg-primary px-4 py-3 text-white flex items-center justify-between">
               <h2 className="font-semibold text-lg">Our Services</h2>
               <button
@@ -110,7 +110,7 @@ export default function Header() {
             </div>
 
                     {/* Services Grid */}
-                    <div className="p-4 max-h-[500px] overflow-y-auto">
+                    <div className="overflow-y-auto p-4 sm:p-6 max-h-[calc(100vh-150px)]">
                       <div className="grid grid-cols-2 gap-3">
                         {servicesData.map((service, index) => (
                           <motion.div
