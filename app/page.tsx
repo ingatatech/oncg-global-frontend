@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { servicesData } from "@/lib/data/services";
+import ServicesClickModal from "@/components/ServicesClickModal";
 
 export default function HomePage() {
     const { scrollYProgress } = useScroll()
@@ -102,16 +103,11 @@ export default function HomePage() {
 From socio-economic research and data analytics to business consulting, IT solutions, and capacity building, we partner with governments, private institutions, and development agencies across Africa to create sustainable, data-driven growth and measurable impact.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex gap-4">
-              <Link
-                href="/services"
-                className="bg-gradient-to-r from-primary to-blue-600 border border-white/30 px-8 py-3 rounded-full font-semibold text-white transition"
-              >
-                Explore Services
-              </Link>
+            <motion.div variants={fadeInUp}  className="flex flex-col sm:flex-row justify-center gap-4">
+              <ServicesClickModal />
               <Link
                 href="/contact-us"
-                className="border border-white/30 hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition"
+                className="border border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold transition w"
               >
                 Get in Touch
               </Link>
@@ -121,7 +117,7 @@ From socio-economic research and data analytics to business consulting, IT solut
       </section>
   {/* ================= SERVICES OVERVIEW ================= */}
 
-<section className="py-10 bg-white relative overflow-hidden">
+<section className="relative py-10 bg-white  overflow-hidden">
   {/* Subtle Background */}
   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 opacity-60 z-0" />
 
@@ -150,7 +146,9 @@ From socio-economic research and data analytics to business consulting, IT solut
     <div className="p-4 overflow-hidden">
       <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
         {servicesData.map((service, index) => (
-          <motion.div
+          <motion.a
+    
+            href={`/services?service=${service.slug}`}
             key={service.slug}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +178,7 @@ From socio-economic research and data analytics to business consulting, IT solut
                 </p>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </div>
@@ -235,55 +233,6 @@ From socio-economic research and data analytics to business consulting, IT solut
           </div>
         </div>
       </section>
-
-      {/* ================= INDUSTRIES WE SERVE ================= */}
-      {/* <section className="py-10 bg-white relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">
-              Industries We <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Serve</span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Delivering specialized solutions across diverse sectors throughout Africa
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              { name: "Government & Public Sector", icon: "🏛️" },
-              { name: "Financial Services", icon: "🏦" },
-              { name: "Healthcare", icon: "⚕️" },
-              { name: "Education", icon: "📚" },
-              { name: "Agriculture", icon: "🌾" },
-              { name: "Manufacturing", icon: "🏭" },
-              { name: "Energy & Infrastructure", icon: "⚡" },
-              { name: "Telecommunications", icon: "📡" },
-              { name: "NGOs & Development", icon: "🤝" },
-              { name: "Retail & Consumer Goods", icon: "🛒" },
-            ].map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white border border-gray-200 shadow-lg rounded-xl p-4 hover:border-blue-500 hover:shadow-xl transition-all cursor-pointer group"
-              >
-                <div className="text-5xl mb-3">{industry.icon}</div>
-                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-cyan-400 transition-colors">
-                  {industry.name}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
     {/* ================= OUR APPROACH ================= */}
 <section className="py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">

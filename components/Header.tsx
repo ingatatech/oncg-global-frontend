@@ -146,17 +146,7 @@ export default function Header() {
                       </div>
                     </div>
 
-                    {/* Footer CTA */}
-                    <div className="border-t border-gray-100 p-4 bg-gray-50">
-                      <Link
-                        href="/services"
-                        onClick={() => setActiveService(null)}
-                        className="flex items-center justify-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
-                      >
-                        <span>View all services</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
+                
                   </motion.div>
                 </>
               )}
@@ -310,7 +300,7 @@ export default function Header() {
                 <div className="flex items-center justify-between mb-8">
                   <Link href="/" className="flex items-center pl-5">
                     <Image
-                      src="/images/oncg-logo1.jpg"
+                      src="/images/logo.png"
                       alt="ONCG"
                       width={120}
                       height={48}
