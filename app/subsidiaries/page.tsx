@@ -5,6 +5,7 @@ import { ExternalLink, Sparkles, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Suspense, useRef } from "react"
+import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
 
 function SubsidiaryPageContent () {
   const searchParams = useSearchParams()
@@ -129,7 +130,7 @@ function SubsidiaryPageContent () {
   }
 
   return (
-    <div className="bg-gray-50">
+    <div className=" bg-gray-50">
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -172,7 +173,7 @@ function SubsidiaryPageContent () {
           ))}
         </div>
 
-        <div className="relative container px-6 mx-auto z-10">
+        <div className="relative  px-6 mx-auto z-10">
           <motion.div
             className="text-left max-w-6xl"
              initial={{ opacity: 0, y: 40 }}
@@ -221,8 +222,8 @@ function SubsidiaryPageContent () {
             </motion.div>
           </motion.div>
         </div>
+<DecorativeBottomWave/>
       </section>
-
     
     </div>
   )

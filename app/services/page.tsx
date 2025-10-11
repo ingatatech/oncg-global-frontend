@@ -6,18 +6,19 @@ import { servicesData } from '@/lib/data/services';
 import { Suspense } from 'react';
 
  function ServicesPageContent() {
-  const searchParams = useSearchParams();
-  const serviceSlug = searchParams.get('service');
+const searchParams = useSearchParams();
+const serviceSlug = searchParams.get('service');
+
+const currentServiceData =
+  serviceSlug
+    ? servicesData.find((s) => s.slug === serviceSlug) || servicesData[0]
+    : servicesData[0];
+
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
-
-  const currentServiceData = serviceSlug
-    ? servicesData.find((s) => s.slug === serviceSlug)
-    : null;
-
   // ========= Split text into 2 paragraphs =========
   const getTwoParagraphs = (text: string) => {
     if (!text) return ["", ""];
@@ -104,7 +105,7 @@ import { Suspense } from 'react';
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={fadeInUp}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
               >
                 View More Details
                 <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { servicesData } from "@/lib/data/services";
 import ServicesClickModal from "@/components/ServicesClickModal";
+import { DecorativeBottomWave } from "@/components/DecorativeBottomWave";
 
 export default function HomePage() {
     const { scrollYProgress } = useScroll()
@@ -235,7 +236,7 @@ From socio-economic research and data analytics to business consulting, IT solut
       </section>
 
     {/* ================= OUR APPROACH ================= */}
-<section className="py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+<section className="relative py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
   {/* Background overlay */}
   <div className="absolute inset-0 z-0">
     <div
@@ -258,7 +259,7 @@ From socio-economic research and data analytics to business consulting, IT solut
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full translate-y-32 -translate-x-32" />
           
   {/* Content container */}
-  <div className="container mx-auto px-6 relative z-10">
+  <div className="container mx-auto px-4 relative">
     {/* Section Header */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -356,16 +357,8 @@ From socio-economic research and data analytics to business consulting, IT solut
   </div>
 
   {/* Decorative Bottom Wave */}
-  <div className="absolute left-0 right-0 bottom-0 z-20 pointer-events-none -mb-3">
-    <svg
-      viewBox="0 0 1920 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-10 md:h-14"
-    >
-      <path d="M0,40 Q480,80 960,40 T1920,40 V80 H0 Z" fill="#305ca7" />
-    </svg>
-  </div>
+    <DecorativeBottomWave/>
+
 </section>
 
     </div>

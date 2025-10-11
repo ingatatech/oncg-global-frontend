@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { FileText, Download, Calendar, Search,  ArrowRight } from "lucide-react"
+import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
 
 export default function PublicationsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -205,7 +206,7 @@ export default function PublicationsPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-6 bg-gradient-to-br from-slate-900 via-primary to-slate-800">
+      <section className="relative py-6 bg-gradient-to-br from-slate-900 via-primary to-slate-800">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -219,7 +220,7 @@ export default function PublicationsPage() {
             <p className="text-xl text-blue-100 mb-4">
               Subscribe to receive notifications when we publish new research, reports, and insights.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto mb-8">
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -231,6 +232,7 @@ export default function PublicationsPage() {
             </div>
           </motion.div>
         </div>
+            <DecorativeBottomWave/>
       </section>
     </div>
   )

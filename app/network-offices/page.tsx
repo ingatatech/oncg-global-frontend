@@ -1,11 +1,14 @@
 'use client'
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { MapPin, Phone, Mail, Building2,  ArrowUpRight } from "lucide-react"
+import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
 
 export default function NetworkOfficesPage() {
   const [selectedRegion, setSelectedRegion] = useState("all")
-
+   const { scrollYProgress } = useScroll()
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+  
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -90,10 +93,43 @@ export default function NetworkOfficesPage() {
     <div className="bg-gray-50">
       {/* Hero Section */}
       <section className="relative py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        </div>
+      {/* Animated Background Elements */}
+          <motion.div 
+            style={{ y }}
+            className="absolute inset-0 opacity-20"
+          >
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+          </motion.div>
+          {/* Overlay */}
+
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48 animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 rounded-full translate-y-32 -translate-x-32" />
+          
+          {/* Floating Particles */}
+          <div className="absolute inset-0">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full opacity-60"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  y: [-20, 20],
+                  opacity: [0.3, 1, 0.3],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
+          </div>
+
 
         <div className="relative container mx-auto px-6 z-10">
           <motion.div
@@ -138,8 +174,8 @@ export default function NetworkOfficesPage() {
       </section>
 
       {/* Offices Grid */}
-      <section className="py-6">
-        <div className="container mx-auto px-6">
+      <section className="py-6 relative">
+        <div className="container mx-auto px-6 mb-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredOffices.map((office, index) => (
               <motion.div
@@ -203,33 +239,7 @@ export default function NetworkOfficesPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-6 bg-gradient-to-br from-slate-900 via-primary to-slate-800">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Work With Us?
-            </h2>
-            <p className="text-xl text-blue-100 mb-4 max-w-2xl mx-auto">
-              Contact your nearest office or reach out to our headquarters. 
-              We're here to help you succeed.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Contact Us
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Learn More
-              </button>
-            </div>
-          </motion.div>
-        </div>
+    <DecorativeBottomWave/>
       </section>
     </div>
   )

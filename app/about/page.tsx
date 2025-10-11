@@ -1,5 +1,6 @@
 "use client";
 
+import { DecorativeBottomWave } from "@/components/DecorativeBottomWave";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Target, Sparkles, ArrowRight, Lightbulb} from "lucide-react";
 import { useRef } from "react";
@@ -390,7 +391,7 @@ export default function AboutUsPage() {
             </div>
           </motion.div>
         </div>
-      
+       <DecorativeBottomWave/>
       </section>
     </div>
   );
