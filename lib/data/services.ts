@@ -101,7 +101,7 @@ export const servicesData = [
     details:
       "Revolutionize your workforce management with holistic HR solutions that prioritize talent, performance, and culture. From recruitment to engagement and retention, we provide strategies that optimize human capital and drive organizational growth.",
     externalUrl: "https://www.skillshubinternational.com/",
-    color: "from-pink-500 to-rose-400",
+    color: "from-pink-500 to-rose-500"
   },
   {
     id: 10,

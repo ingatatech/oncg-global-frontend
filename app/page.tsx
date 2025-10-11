@@ -121,57 +121,72 @@ From socio-economic research and data analytics to business consulting, IT solut
       </section>
   {/* ================= SERVICES OVERVIEW ================= */}
 
- <section className="py-10 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 opacity-50"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+<section className="py-10 bg-white relative overflow-hidden">
+  {/* Subtle Background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 opacity-60 z-0" />
+
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Section Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-8"
+    >
+      <h2 className="text-4xl font-bold mb-4 text-slate-900">
+        Our{" "}
+        <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+          Core Services
+        </span>
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Comprehensive solutions designed to drive growth and transform
+        organizations across Africa.
+      </p>
+    </motion.div>
+
+    {/* Services Grid */}
+    <div className="p-4 overflow-hidden">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {servicesData.map((service, index) => (
           <motion.div
+            key={service.slug}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            transition={{ delay: index * 0.05, duration: 0.6 }}
+            className="group hover:bg-gray-50 rounded-2xl p-4 transition-all duration-300 border border-gray-100 shadow-sm hover:shadow-md"
           >
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">
-              Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Core Services</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive solutions designed to drive growth and transform organizations across Africa
-            </p>
-          </motion.div>
-
-            <div className="p-4  overflow-hidden">
-                      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-                        {servicesData.map((service, index) => (
-                          <motion.div
-                            key={service.slug}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.03 }}
-                          >
-                           
-                              <div className="flex items-start space-x-3">
-                                <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl shadow-lg group-hover/item:scale-110 transition-transform duration-300`}>
-                                  <service.icon />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center justify-between mb-1">
-                                    <h4 className="font-semibold text-gray-900 text-sm group-hover/item:text-blue-600 transition-colors line-clamp-1">
-                                      {service.title}
-                                    </h4>
-                                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover/item:text-blue-600 group-hover/item:translate-x-1 transition-all flex-shrink-0 ml-2" />
-                                  </div>
-                                  <p className="text-xs text-gray-600 line-clamp-2">
-                                    {service.details.slice(0, 70)}...
-                                  </p>
-                                </div>
-                              </div>
-                          </motion.div>
-                        ))}
-                      </div>
+            <div className="flex items-start space-x-4">
+              {/* Icon Container with Gradient */}
+              <div
+                className={`relative flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color}
+                flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300`}
+              >
+                <service.icon className="w-6 h-6" />
               </div>
-        </div>
-      </section>
+
+              {/* Service Text */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-1">
+                  <h4 className="font-semibold text-gray-900 text-base group-hover:text-blue-600 transition-colors line-clamp-1">
+                    {service.title}
+                  </h4>
+                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
+                </div>
+                <p className="text-sm text-gray-600 line-clamp-3">
+                  {service.details.slice(0, 120)}...
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* ================= WHY CHOOSE US ================= */}
       <section className="py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative">
         <div className="absolute inset-0 opacity-10">

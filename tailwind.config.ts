@@ -46,6 +46,19 @@ const config: Config =  {
       },
     },
   },
+    safelist: [
+    // All possible gradient color combinations used in servicesData
+    'from-blue-500', 'to-cyan-500',
+    'from-amber-500', 'to-yellow-400',
+    'from-green-500', 'to-emerald-400',
+    'from-pink-500', 'to-rose-400',
+    'from-purple-500', 'to-indigo-500',
+    'from-sky-500', 'to-blue-400',
+    'from-indigo-500', 'to-sky-500',
+    'from-orange-500', 'to-red-400',
+    'from-pink-500', 'to-rose-500',
+    'from-red-500', 'to-orange-500',
+  ],
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 

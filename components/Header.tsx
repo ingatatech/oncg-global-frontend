@@ -125,7 +125,7 @@ export default function Header() {
                               className="group/item block p-4 rounded-xl hover:bg-gradient-to-br hover:from-gray-50 hover:to-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200 hover:shadow-lg"
                             >
                               <div className="flex items-start space-x-3">
-                                <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl shadow-lg group-hover/item:scale-110 transition-transform duration-300`}>
+                                <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} text-white flex items-center justify-center text-2xl shadow-lg group-hover/item:scale-110 transition-transform duration-300`}>
                                   <service.icon />
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -191,9 +191,9 @@ export default function Header() {
                           onClick={() => setActiveService(null)}
                           className="group/sub flex items-start space-x-3 px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-lg transition-all duration-200 hover:shadow-md"
                         >
-                          <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center text-xl shadow-sm group-hover/sub:scale-110 transition-transform">
+                          {/* <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center text-xl shadow-sm group-hover/sub:scale-110 transition-transform">
                             {subsidiary.icon}
-                          </div>
+                          </div> */}
                           <div className="flex-1 min-w-0">
                             <h3 className="font-medium text-sm text-gray-900 group-hover/sub:text-blue-600 transition-colors">
                               {subsidiary.name}
