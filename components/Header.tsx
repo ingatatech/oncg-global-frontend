@@ -62,7 +62,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center pl-5">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="ONCG"
               width={200}
               height={80}
@@ -300,7 +300,7 @@ export default function Header() {
                 <div className="flex items-center justify-between mb-8">
                   <Link href="/" className="flex items-center pl-5">
                     <Image
-                      src="/images/logo.jpg"
+                      src="/images/logo.png"
                       alt="ONCG"
                       width={120}
                       height={48}

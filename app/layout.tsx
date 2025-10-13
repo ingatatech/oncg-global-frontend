@@ -59,8 +59,8 @@ export default function RootLayout({
       <head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-				<link rel="apple-touch-icon" type="image/jpg" href="/images/oncg-logo1.jpg" />
-				<link rel="icon" type="image/jpg" href="/images/oncg-logo1.jpg" />
+				<link rel="apple-touch-icon" type="image/jpg" href="/images/Logo.jpg" />
+				<link rel="icon" type="image/jpg" href="/images/Logo.jpg" />
 			</head>
       <body className={`${inter.variable} antialiased`}>
         	<Toaster position="top-right" />
