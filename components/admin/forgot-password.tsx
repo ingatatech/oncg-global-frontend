@@ -545,7 +545,7 @@ export default function ONCGResetPasswordPage() {
                 className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-2"
               >
                 <Image
-                  src="/images/oncg-logo1.jpg"
+                  src="/images/logo.jpg"
                   alt="ONCG Logo"
                   width={48}
                   height={48}
