@@ -136,58 +136,61 @@ export default function AboutUsPage() {
       </section>
 
       {/* ================= OUR JOURNEY ================= */}
-      <section className="py-10 bg-white relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">
-              Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Journey</span>
-            </h2>
-        
-          </motion.div>
+    <section className="py-8 bg-gradient-to-b from-white via-blue-50 to-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
 
-          <div className="grid lg:grid-cols-1items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <p>
-                  The idea of ONCG Global Holdings started in 2013 with the creation of Skills Hub International Ltd by its visionary founder. It was born from a mission to build the capabilities of human capital through innovative training offerings that evolved with labour market dynamics.
-                </p>
-                <p>
-                  Over the years, specialized consulting firms were created to complement our training expertise. Today, we stand as a continental consulting hub operating across multiple African countries, with a growing network of African consultants who are committed to creating tangible value for our clients.
-                </p>
-                <p>
-                  We have evolved into a multidisciplinary consulting powerhouse offering a comprehensive range of services including capacity building, professional training, business consulting, IT consulting and solutions, socio-economic research and consulting, advanced data analytics, actuarial services, and other assurance offerings.
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl font-bold mb-4 text-slate-900">
+            Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Journey</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            From a single vision in 2013 to a continental consulting powerhouse transforming African organizations
+          </p>
+        </motion.div>
+
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-1 gap-12 items-center mb-8">
+     
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="space-y-5">
+              <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <p className="text-gray-700 leading-relaxed">
+                  <span className="font-semibold text-blue-600">ONCG Global Holdings</span> started with an ambitious vision: to build human capital through innovative training that evolves with market demands.
                 </p>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="pt-6 border-t-2 border-blue-200"
-              >
-                <p className="text-blue-600 font-semibold text-lg flex items-center gap-2">
-                  <Sparkles size={24} />
-                  Serving clients across 15+ African countries
+              <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <p className="text-gray-700 leading-relaxed">
+                  What began as <span className="font-semibold">Skills Hub International Ltd</span> has blossomed into a network of specialized consulting firms across multiple African countries.
                 </p>
-              </motion.div>
-            </motion.div>
+              </div>
 
-    
+              <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <p className="text-gray-700 leading-relaxed">
+                  Today, we leverage a <span className="font-semibold">growing network of African consultants</span> committed to creating tangible value and driving transformation across the continent.
+                </p>
+              </div>
+            </div>
+          </motion.div>
           </div>
-        </div>
-      </section>
+          </div>
+          </section>
+
 
       {/* ================= VISION & MISSION ================= */}
       <section className="py-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
