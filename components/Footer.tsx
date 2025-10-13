@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-6">
               <Image
-                src="/images/logo.png"
+                src="/images/Logo2.jpg"
                 alt="ONCG"
                 width={200}
                 height={80}
-                className="h-12 w-auto filter brightness-0 invert"
+                className="h-12 w-auto"
 
               />
             </Link>
