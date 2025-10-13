@@ -35,7 +35,7 @@ export const metadata = {
     siteName: "ONCG Global Holdings",
     images: [
       {
-        url: "/images/logo.jpg",
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
         alt: "ONCG Global Holdings - Consulting and Research",
@@ -59,8 +59,8 @@ export default function RootLayout({
       <head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-				<link rel="apple-touch-icon" type="image/jpg" href="/images/Logo.jpg" />
-				<link rel="icon" type="image/jpg" href="/images/Logo.jpg" />
+				<link rel="apple-touch-icon" type="image/png" href="/images/logo.png" />
+				<link rel="icon" type="image/png" href="/images/logo.png" />
 			</head>
       <body className={`${inter.variable} antialiased`}>
         	<Toaster position="top-right" />
