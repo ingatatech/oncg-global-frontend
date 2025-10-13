@@ -153,7 +153,7 @@ export default function LeadershipPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Leadership Team</h2>
+              <h2 className="text-4xl  font-bold text-gray-800 mb-4">Our Leadership Team</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto text-left">
                 Experienced professionals dedicated to delivering excellence and driving innovation in every client engagement
               </p>

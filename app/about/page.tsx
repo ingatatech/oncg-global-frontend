@@ -1,8 +1,10 @@
 "use client";
 
 import { DecorativeBottomWave } from "@/components/DecorativeBottomWave";
+import ServicesClickModal from "@/components/ServicesClickModal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Target, Sparkles, ArrowRight, Lightbulb} from "lucide-react";
+import Link from "next/link";
 import { useRef } from "react";
 
 export default function AboutUsPage() {
@@ -124,13 +126,10 @@ export default function AboutUsPage() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full font-semibold text-white transition inline-flex items-center justify-center gap-2">
-                Explore Our Services
-                <ArrowRight size={20} />
-              </button>
-              <button className="border-2 border-white/30 hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-white transition">
+              <ServicesClickModal />
+              <Link href="/contact-us" className="border-2 border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold text-white transition">
                 Contact Us
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -143,9 +142,9 @@ export default function AboutUsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h2 className="text-4xl font-bold mb-4 text-slate-900">
               Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Journey</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -261,7 +260,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h2 className="text-4xl  font-bold mb-4 text-slate-900">
               Our <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent">Core Values</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
@@ -308,7 +307,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h2 className="text-4xl font-bold mb-4 text-slate-900">
               Why Partner With <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">ONCG Global</span>
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg">
@@ -374,7 +373,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl  font-bold text-white mb-6">
               Ready to Partner With Us?
             </h2>
             <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
