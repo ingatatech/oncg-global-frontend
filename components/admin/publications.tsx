@@ -108,7 +108,7 @@ export default function PublicationsPage() {
       setPublications(data.data || data);
     } catch (error) {
       console.error("Error fetching publications:", error);
-      toast.error("Error fetching publications");
+
     } finally {
       setLoading(false);
     }
