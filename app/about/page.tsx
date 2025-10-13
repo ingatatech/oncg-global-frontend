@@ -147,14 +147,12 @@ export default function AboutUsPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="text-4xl font-bold mb-4 text-slate-900">
             Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Journey</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From a single vision in 2013 to a continental consulting powerhouse transforming African organizations
-          </p>
+         
         </motion.div>
 
         {/* Main Content Grid */}
@@ -168,21 +166,17 @@ export default function AboutUsPage() {
             className="space-y-6"
           >
             <div className="space-y-5">
+
+
               <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  <span className="font-semibold text-blue-600">ONCG Global Holdings</span> started with an ambitious vision: to build human capital through innovative training that evolves with market demands.
+                <p className="text-gray-700 leading-relaxed text-xl">
+The idea of <span className="font-semibold text-blue-600">ONCG Global Holdings</span>  started from 2013 with creation of <span className="font-semibold text-blue-600">Skills Hub international Ltd </span>by its founder. It started with the aim of building capabilities of human capital through training offerings evolving with labour market dynamics. Later on, other specialised consulting firms were created. We are now a continental consulting hub operating across Africa.
                 </p>
               </div>
 
               <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  What began as <span className="font-semibold">Skills Hub International Ltd</span> has blossomed into a network of specialized consulting firms across multiple African countries.
-                </p>
-              </div>
-
-              <div className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <p className="text-gray-700 leading-relaxed">
-                  Today, we leverage a <span className="font-semibold">growing network of African consultants</span> committed to creating tangible value and driving transformation across the continent.
+                <p className="text-gray-700 leading-relaxed text-xl">
+            We are a networking of African consultants who strive to create value for our cherished clients. We are now a multidisciplinary consulting hub offering a wide range of services including capacity building, training business consulting, IT consulting and Solutions, Socio-economic research and consulting, Data analytics, Actuarial and other assurance services.
                 </p>
               </div>
             </div>
