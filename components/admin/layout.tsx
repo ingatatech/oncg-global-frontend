@@ -158,7 +158,7 @@ const sidebarSections = [
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center">
                   <Image
-                    src="/images/oncg-logo1.jpg"
+                    src="/images/logo.png"
                     alt="ONCG - "
                     width={200}
                     height={40}

@@ -15,7 +15,8 @@ export default function Footer() {
                 alt="ONCG"
                 width={200}
                 height={80}
-                className="h-12 w-auto"
+                className="h-12 w-auto filter brightness-0 invert"
+
               />
             </Link>
             <p className="text-primary-foreground/80 mb-6 text-pretty leading-relaxed">
