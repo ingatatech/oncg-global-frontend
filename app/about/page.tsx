@@ -375,13 +375,11 @@ The idea of <span className="font-semibold text-blue-600">ONCG Global Holdings</
               Let's create sustainable impact together across the African continent. Our team is ready to understand your challenges and deliver tailored solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition inline-flex items-center justify-center gap-2">
+              <Link href="/contact-us" className="w-40 bg-white text-blue-600 hover:bg-gray-100 px-5 py-2 rounded-full font-semibold transition inline-flex items-center justify-center gap-2">
                 Get in Touch
                 <ArrowRight size={20} />
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition">
-                Explore Our Services
-              </button>
+              </Link>
+             <ServicesClickModal />
             </div>
           </motion.div>
         </div>

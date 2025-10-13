@@ -354,7 +354,7 @@ export default function Header() {
                                 onClick={closeMobileMenu}
                                 className="flex items-center space-x-3 p-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition-colors group"
                               >
-                                <span className="text-lg"><service.icon /></span>
+                                {/* <span className="text-lg"><service.icon /></span> */}
                                 <span className="flex-1">{service.title}</span>
                                 <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                               </Link>

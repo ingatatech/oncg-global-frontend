@@ -203,19 +203,19 @@ function SubsidiaryPageContent () {
               {subsidiary.description}
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex gap-4">
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
               <a
                 href={subsidiary.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-white text-primary px-8 py-3 rounded-full font-semibold transition"
+                className="w-52 inline-flex items-center space-x-2 bg-white text-primary px-5 py-2 rounded-full font-semibold transition"
               >
                 <span>Visit Website</span>
                 <ExternalLink className="w-5 h-5" />
               </a>
               <Link
                 href="/contact-us"
-                className="border border-white/30 hover:bg-white/10 px-8 py-3 rounded-full font-semibold text-white transition"
+                className=" w-52 border border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold text-white transition"
               >
                 Contact Us
               </Link>
