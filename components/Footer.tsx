@@ -77,7 +77,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-2 border-t border-primary-foreground/20">
+       <div className="mt-8">
+
+         <div className="flex flex-col md:flex-row justify-between items-center pt-2 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
             <div className="text-sm text-primary-foreground/80">
               © {new Date().getFullYear()} ONCG. All rights reserved.
@@ -121,6 +123,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+       </div>
       </div>
     </footer>
   )
