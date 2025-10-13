@@ -41,7 +41,7 @@ import api from "@/lib/axios";
 import { AnimatePresence, motion } from "framer-motion";
 import DeleteConfirmationModal from "../DeleteConfirmationModal";
 
-interface TeamMember {
+export interface TeamMember {
   id: string;
   name: string;
   position: string;

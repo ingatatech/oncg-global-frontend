@@ -49,8 +49,8 @@ const offices: Office[] = [
     id: "main",
     name: "Headquarter",
     address: "Kimironko, Triump House",
-    phone: "+(250) 788 303 061",
-    email: " info@oncg.rw",
+    phone: "+(250) 786 600 190",
+    email: "info@oncgglobal.com",
     hours: "Mon-Fri: 9:00 AM - 6:00 PM",
     coordinates: { lat: 40.7128, lng: -74.0060 }
   },

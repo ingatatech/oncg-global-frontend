@@ -231,8 +231,8 @@ export const subscribeNewsletter = async (email: string) => {
 };
 
 // Leaders API functions
-export const fetchLeaders = async (queryParams?: string) => {
-  const url = queryParams ? `/leaders?${queryParams}` : "/leaders";
+export const fetchTeam = async (queryParams?: string) => {
+  const url = queryParams ? `/team?${queryParams}` : "/team";
   const response = await api.get(url);
   return response.data;
 };

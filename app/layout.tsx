@@ -35,7 +35,7 @@ export const metadata = {
     siteName: "ONCG Global Holdings",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/logo.jpg",
         width: 1200,
         height: 630,
         alt: "ONCG Global Holdings - Consulting and Research",

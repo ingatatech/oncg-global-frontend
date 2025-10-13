@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-6">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.jpg"
                 alt="ONCG"
                 width={200}
                 height={80}
@@ -55,20 +55,20 @@ export default function Footer() {
 
               <div className="flex items-center space-x-3 text-sm text-primary-foreground/80">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@oncg.co.rw" className="hover:text-white transition-colors">
-                  info@oncg.co.rw
-                </a>
-              </div>
-               <div className="flex items-center space-x-3 text-sm text-primary-foreground/80">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+250780066190" className="hover:text-white transition-colors">
-                 +(250) 780 066 190
+                <a href="mailto:info@oncgglobal.com" className="hover:text-white transition-colors">
+                  info@oncgglobal.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-sm text-primary-foreground/80">
                 <Phone className="h-4 w-4" />
                 <a href="tel:+250788303061" className="hover:text-white transition-colors">
                   +(250) 788 303 061
+                </a>
+              </div>
+               <div className="flex items-center space-x-3 text-sm text-primary-foreground/80">
+                <Phone className="h-4 w-4" />
+                <a href="tel:+250780066190" className="hover:text-white transition-colors">
+                 +(250) 780 066 190
                 </a>
               </div>
              

@@ -1,11 +1,16 @@
 'use client'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { MapPin, Phone, Mail, Building2,  ArrowUpRight } from "lucide-react"
 import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
+import api from "@/lib/axios"
+import toast from "react-hot-toast"
+import { Office } from "@/lib/types/offices"
 
 export default function NetworkOfficesPage() {
   const [selectedRegion, setSelectedRegion] = useState("all")
+    const [offices, setOffices] = useState<Office[]>([]);
+    const [loading, setLoading] = useState(true);
    const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
   
@@ -14,73 +19,22 @@ export default function NetworkOfficesPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   }
 
-  const offices = [
-    {
-      country: "Rwanda",
-      city: "Kigali",
-      address: "KG 9 Ave, Nyarugenge District",
-      phone: "+250 788 123 456",
-      email: "kigali@oncg.rw",
-      isHeadquarters: true,
-      employees: 150
-    },
-    {
-      country: "Kenya",
-      city: "Nairobi",
-      address: "Westlands Road, Nairobi",
-      phone: "+254 712 345 678",
-      email: "nairobi@oncg.com",
-      employees: 120
-    },
-    {
-      country: "Uganda",
-      city: "Kampala",
-      address: "Kampala Road, Central Division",
-      phone: "+256 772 123 456",
-      email: "kampala@oncg.com",
-      employees: 85
-    },
-    {
-      country: "Tanzania",
-      city: "Dar es Salaam",
-      address: "Ali Hassan Mwinyi Road",
-      phone: "+255 754 123 456",
-      email: "daressalaam@oncg.com",
-      employees: 95
-    },
-    {
-      country: "Nigeria",
-      city: "Lagos",
-      address: "Victoria Island, Lagos",
-      phone: "+234 803 123 4567",
-      email: "lagos@oncg.com",
-      employees: 180
-    },
-    {
-      country: "Ghana",
-      city: "Accra",
-      address: "Airport Residential Area",
-      phone: "+233 24 123 4567",
-      email: "accra@oncg.com",
-      employees: 110
-    },
-    {
-      country: "South Africa",
-      city: "Johannesburg",
-      address: "Sandton City, Johannesburg",
-      phone: "+27 11 123 4567",
-      email: "johannesburg@oncg.com",
-      employees: 200
-    },
-    {
-      country: "Zambia",
-      city: "Lusaka",
-      address: "Cairo Road, Lusaka",
-      phone: "+260 97 123 4567",
-      email: "lusaka@oncg.com",
-      employees: 75
+  // Fetch offices
+  const fetchOffices = async () => {
+    try {
+      const { data } = await api.get("/offices");
+      setOffices(data.data || data);
+    } catch (error) {
+      console.error("Error fetching offices:", error);
+      toast.error("Error fetching offices");
+    } finally {
+      setLoading(false);
     }
-  ]
+  };
+
+  useEffect(() => {
+    fetchOffices();
+  }, []);
 
   const regions = ["all", ...Array.from(new Set(offices.map(office => office.country)))]
 
@@ -176,68 +130,83 @@ export default function NetworkOfficesPage() {
       {/* Offices Grid */}
       <section className="py-6 relative">
         <div className="container mx-auto px-6 mb-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredOffices.map((office, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-              >
-                <div className="p-6">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="w-5 h-5 text-blue-600" />
-                        <span className="text-sm font-medium text-gray-500">{office.city}</span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900">{office.country}</h3>
-                    </div>
-                    {office.isHeadquarters && (
-                      <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">
-                        HQ
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="h-px bg-gray-200 my-4"></div>
-
-                  {/* Contact Info */}
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <Building2 className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-gray-600">{office.address}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      <a href={`tel:${office.phone}`} className="text-sm text-blue-600 hover:underline">
-                        {office.phone}
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                      <a href={`mailto:${office.email}`} className="text-sm text-blue-600 hover:underline">
-                        {office.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="h-px bg-gray-200 my-4"></div>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between">
-                   
-                    <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
-                      Get Directions
-                      <ArrowUpRight className="w-4 h-4" />
-                    </button>
-                  </div>
+          {loading ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 p-6 animate-pulse"
+                >
+                  <div className="h-6 bg-gray-200 rounded w-3/4 mb-4" />
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mb-2" />
+                  <div className="h-4 bg-gray-200 rounded w-full mb-2" />
+                  <div className="h-4 bg-gray-200 rounded w-5/6 mt-4" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredOffices.map((office, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                >
+                  <div className="p-6">
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <MapPin className="w-5 h-5 text-blue-600" />
+                          <span className="text-sm font-medium text-gray-500">{office.city}</span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900">{office.country}</h3>
+                      </div>
+                      {office.isHeadquarters && (
+                        <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">
+                          HQ
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="h-px bg-gray-200 my-4"></div>
+
+                    {/* Contact Info */}
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <Building2 className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-gray-600">{office.address}</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                        <a href={`tel:${office.phone}`} className="text-sm text-blue-600 hover:underline">
+                          {office.phone}
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                        <a href={`mailto:${office.email}`} className="text-sm text-blue-600 hover:underline">
+                          {office.email}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-gray-200 my-4"></div>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between">
+                      <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
+                        Get Directions
+                        <ArrowUpRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
     <DecorativeBottomWave/>
       </section>

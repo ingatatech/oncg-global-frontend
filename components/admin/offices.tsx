@@ -47,19 +47,8 @@ import api from "@/lib/axios";
 
 import { AnimatePresence, motion } from "framer-motion";
 import DeleteConfirmationModal from "../DeleteConfirmationModal";
+import { Office } from "@/lib/types/offices";
 
-interface Office {
-  id: string;
-  country: string;
-  city: string;
-  address: string;
-  phone: string;
-  email: string;
-  isHeadquarters: boolean;
-  isActive: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
 
 export default function OfficesPage() {
   const [offices, setOffices] = useState<Office[]>([]);

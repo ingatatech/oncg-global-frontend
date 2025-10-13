@@ -49,14 +49,13 @@ import api from "@/lib/axios";
 import { AnimatePresence, motion } from "framer-motion";
 import DeleteConfirmationModal from "../DeleteConfirmationModal";
 
-interface Publication {
+export interface Publication {
   id: string;
   title: string;
   description: string;
   type: string;
   fileUrl: string;
   fileType: string;
-  date: string;
   isActive: boolean;
   createdAt: string;
   updatedAt: string;
@@ -80,7 +79,6 @@ export default function PublicationsPage() {
     title: "",
     description: "",
     type: "",
-    date: "",
     isActive: true,
   });
   const [file, setFile] = useState<File | null>(null);
@@ -128,7 +126,6 @@ export default function PublicationsPage() {
         title: publication.title,
         description: publication.description,
         type: publication.type,
-        date: publication.date.split("T")[0],
         isActive: publication.isActive,
       });
     } else {
@@ -137,7 +134,6 @@ export default function PublicationsPage() {
         title: "",
         description: "",
         type: "",
-        date: "",
         isActive: true,
       });
     }
@@ -351,7 +347,7 @@ export default function PublicationsPage() {
                       <TableCell>
                         <div className="flex items-center text-sm text-slate-600">
                           <Calendar className="h-4 w-4 mr-1 text-slate-400" />
-                          {new Date(publication.date).toLocaleDateString()}
+                          {new Date(publication.createdAt).toLocaleDateString()}
                         </div>
                       </TableCell>
                       <TableCell>
@@ -488,7 +484,7 @@ export default function PublicationsPage() {
                       </div>
                       <div className="flex items-center mt-2 text-sm text-slate-600">
                         <Calendar className="h-4 w-4 mr-1" />
-                        {new Date(viewingPublication.date).toLocaleDateString("en-US", {
+                        {new Date(viewingPublication.createdAt).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
@@ -621,19 +617,6 @@ export default function PublicationsPage() {
                           ))}
                         </SelectContent>
                       </Select>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        Publication Date *
-                      </label>
-                      <Input
-                        type="date"
-                        value={formData.date}
-                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        required
-                        className="border-slate-200 focus:border-primary focus:ring-primary/20"
-                      />
                     </div>
                   </div>
                 </div>
