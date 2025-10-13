@@ -1,5 +1,5 @@
 'use client'
-import {  Award, Users, Linkedin, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
+import {  Award,  Linkedin, ArrowRight, } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -116,11 +116,11 @@ export default function LeadershipPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 1 }}
               >
-                <Link href="#team" className="inline-flex items-center bg-primary text-white px-10 py-3 rounded-full font-medium hover:bg-white hover:text-primary transition-all duration-300 group">
+                <Link href="#team" className="inline-flex items-center w-56 bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-white hover:text-primary transition-all duration-300 group">
                   Meet the Leadership
                   <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <Link href="/contact-us" className="inline-flex items-center border-2 border-white/30 text-white px-10 py-3 rounded-full font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group">
+                <Link href="/contact-us" className=" w-56 inline-flex items-center border-2 border-white/30 text-white px-5 py-2 rounded-full font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group">
                   Connect With Us
                   <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />
                 </Link>
@@ -154,9 +154,9 @@ export default function LeadershipPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl  font-bold text-gray-800 mb-4">Our Leadership Team</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto text-left">
+              {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto text-left">
                 Experienced professionals dedicated to delivering excellence and driving innovation in every client engagement
-              </p>
+              </p> */}
             </motion.div>
 
 
@@ -268,43 +268,6 @@ export default function LeadershipPage() {
   </>
 </AnimatePresence>
             )}
-          </div>
-        </section>
-
-        {/* Leadership Stats */}
-        <section className="py-10 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Leadership Excellence</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto text-left">
-                Our leadership team's collective experience and achievements speak to our commitment to excellence
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { number: loading ? "..." : `${458}+`, label: "Projects Successfully Led", icon: Briefcase },
-                { number: loading ? "..." : leaders.length.toString(), label: "Senior Leaders", icon: Users },
-                { number: "100%", label: "Client Satisfaction Rate", icon: GraduationCap }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
-                >
-                  <stat.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-800 mb-2">{stat.number}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 

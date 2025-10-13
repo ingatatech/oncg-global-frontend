@@ -93,8 +93,9 @@ export default function Header() {
                     onClick={() => setActiveService(null)}
                   />
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full left-1/3 -translate-x-1/2 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl z-50 border border-gray-100 overflow-hidden"
                   >
@@ -112,12 +113,13 @@ export default function Header() {
                     {/* Services Grid */}
                     <div className="overflow-y-auto p-4 sm:p-6 max-h-[calc(100vh-150px)]">
                       <div className="grid grid-cols-2 gap-3">
-                        {servicesData.map((service, index) => (
+                        {servicesData.map((service) => (
                           <motion.div
                             key={service.slug}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.03 }}
+                            transition={{ duration: 1 }}
+                            // transition={{ delay: index * 0.03 }}
                           >
                             <Link
                               href={`/services?service=${service.slug}`}

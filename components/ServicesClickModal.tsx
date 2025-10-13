@@ -71,18 +71,19 @@ export default function ExploreServicesButton() {
     <AnimatePresence>
       {isModalOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[9999] overflow-y-auto px-4"
           onClick={() => setIsModalOpen(false)}
         >
           {/* Modal Content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+             initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
             exit={{ opacity: 0, scale: 0.9, y: -20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="relative top-16 lg:top-20 mx-auto max-w-6xl bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >

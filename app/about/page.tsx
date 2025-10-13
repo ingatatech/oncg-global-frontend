@@ -127,7 +127,7 @@ export default function AboutUsPage() {
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
               <ServicesClickModal />
-              <Link href="/contact-us" className="border-2 border-white/30 hover:bg-white/10 px-5 py-2 rounded-full font-semibold text-white transition">
+              <Link href="/contact-us" className="border-2 border-white/30 hover:bg-white/10 px-5 py-2 w-40 rounded-full font-semibold text-white transition">
                 Contact Us
               </Link>
             </motion.div>
@@ -147,9 +147,7 @@ export default function AboutUsPage() {
             <h2 className="text-4xl font-bold mb-4 text-slate-900">
               Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Journey</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              From humble beginnings to continental impact
-            </p>
+        
           </motion.div>
 
           <div className="grid lg:grid-cols-1items-center">
