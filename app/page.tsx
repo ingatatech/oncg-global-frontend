@@ -345,7 +345,7 @@ From socio-economic research and data analytics to business consulting, IT solut
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             href="/contact-us"
-            className="inline-flex items-center bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:from-primary hover:to-blue-700 transition-all duration-300 group shadow-xl hover:shadow-cyan-500/25"
+            className="inline-flex items-center bg-gradient-to-r from-primary to-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:from-primary hover:to-blue-700 transition-all duration-300 group shadow-xl hover:shadow-cyan-500/25"
           >
             Contact Us
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
