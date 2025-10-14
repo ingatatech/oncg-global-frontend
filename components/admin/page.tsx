@@ -38,7 +38,7 @@ interface DashboardStats {
   insights: number;
   publications: number;
   contactMessages: number;
-  leaders: number;
+  team: number;
   subscribers: number;
   offices: number;
 }
@@ -48,7 +48,7 @@ interface MonthlyStats {
   monthName: string;
   insights: number;
   publications: number;
-  leaders: number;
+  team: number;
   subscribers: number;
   contactMessages: number;
   offices: number;
@@ -59,7 +59,7 @@ interface YearlyStats {
   year: number;
   insights: number;
   publications: number;
-  leaders: number;
+  team: number;
   subscribers: number;
   contactMessages: number;
   offices: number;
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
     insights: 0,
     publications: 0,
     contactMessages: 0,
-    leaders: 0,
+    team: 0,
     subscribers: 0,
     offices: 0,
   });
@@ -99,14 +99,14 @@ export default function AdminDashboard() {
       const [
         insightsRes,
         publicationsRes,
-        leadersRes,
+        teamRes,
         subscribersRes,
         contactMessagesRes,
         officesRes,
       ] = await Promise.all([
         api.get("/insights"),
         api.get("/publications"),
-        api.get("/leaders"),
+        api.get("/team"),
         api.get("/subscribers"),
         api.get("/contact-messages"),
         api.get("/offices"),
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
           publicationsRes.data?.data?.length ||
           publicationsRes.data?.length ||
           0,
-        leaders: leadersRes.data?.data?.length || leadersRes.data?.length || 0,
+        team: teamRes.data?.data?.length || teamRes.data?.length || 0,
         subscribers:
           subscribersRes.data?.data?.length || subscribersRes.data?.length || 0,
         contactMessages:
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
         insights: 0,
         publications: 0,
         contactMessages: 0,
-        leaders: 0,
+        team: 0,
         subscribers: 0,
         offices: 0,
       });
@@ -204,7 +204,7 @@ export default function AdminDashboard() {
   const pieData = [
     { name: "Insights", value: stats.insights, color: "#3b82f6" },
     { name: "Publications", value: stats.publications, color: "#10b981" },
-    { name: "Leaders", value: stats.leaders, color: "#8b5cf6" },
+    { name: "Team", value: stats.team, color: "#8b5cf6" },
     { name: "Subscribers", value: stats.subscribers, color: "#ef4444" },
     { name: "Offices", value: stats.offices, color: "#06b6d4" },
   ].filter((item) => item.value > 0);
@@ -253,15 +253,15 @@ export default function AdminDashboard() {
 
     // People & Subscribers Section
     {
-      title: "Leaders",
-      value: stats?.leaders || 0,
-      growth: getStatGrowth("leaders"),
+      title: "team",
+      value: stats?.team || 0,
+      growth: getStatGrowth("team"),
       icon: Users,
       gradient: "from-pink-500 via-rose-600 to-red-700",
       bgGradient: "from-pink-50/50 via-rose-50/30 to-red-50/20",
       glowColor: "shadow-pink-500/20",
-      href: "/admin/leaders",
-      description: "Leadership profiles",
+      href: "/admin/team",
+      description: "teamhip profiles",
       accentColor: "text-pink-600",
       section: "People & Subscribers",
     },
@@ -486,9 +486,9 @@ export default function AdminDashboard() {
                   radius={[2, 2, 0, 0]}
                 />
                 <Bar
-                  dataKey="leaders"
+                  dataKey="team"
                   fill="#8b5cf6"
-                  name="Leaders"
+                  name="team"
                   radius={[2, 2, 0, 0]}
                 />
                 <Bar
