@@ -211,7 +211,7 @@ export default function PublicationsPage() {
                         href={publication.fileUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gradient-to-br from-slate-900 via-primary to-slate-800 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm font-medium"
+                        className="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm font-medium"
                       >
                         <Download className="h-4 w-4" />
                         Download File
@@ -233,7 +233,14 @@ export default function PublicationsPage() {
 
       {/* Newsletter CTA */}
       <section className="relative py-6 bg-gradient-to-br from-slate-900 via-primary to-slate-800">
-        <div className="container mx-auto px-6">
+          {/* Background overlay */}
+  <div className="absolute inset-0 z-0">
+    <div
+      className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/60 to-white/95"
+      style={{ mixBlendMode: "multiply" }}
+    />
+  </div>
+        <div className="relative container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
