@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { MapPin, Phone, Mail, Building2,  ArrowUpRight } from "lucide-react"
 import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
 import api from "@/lib/axios"
-import toast from "react-hot-toast"
 import { Office } from "@/lib/types/offices"
 
 export default function NetworkOfficesPage() {
@@ -26,7 +25,7 @@ export default function NetworkOfficesPage() {
       setOffices(data.data || data);
     } catch (error) {
       console.error("Error fetching offices:", error);
-      toast.error("Error fetching offices");
+      // toast.error("Error fetching offices");
     } finally {
       setLoading(false);
     }
