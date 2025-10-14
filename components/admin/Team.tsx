@@ -465,32 +465,7 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                {/* Additional Info */}
-                <div className="bg-white rounded-lg border p-6">
-                  <h4 className="text-lg font-semibold text-slate-900 mb-4">Additional Information</h4>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Member ID:</span>
-                      <span className="font-medium text-slate-900">{viewingMember.id}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Display Order:</span>
-                      <span className="font-medium text-slate-900">{viewingMember.order}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Created:</span>
-                      <span className="font-medium text-slate-900">
-                        {new Date(viewingMember.createdAt).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Last Updated:</span>
-                      <span className="font-medium text-slate-900">
-                        {new Date(viewingMember.updatedAt).toLocaleDateString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+             
               </div>
             </motion.div>
           </motion.div>
