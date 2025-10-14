@@ -77,53 +77,53 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-       <div className="mt-8">
+       <div className="mt-0 pt-4">
+  <div className="flex flex-col md:flex-row justify-between items-center pt-2 border-t border-primary-foreground/20">
+    <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
+      <div className="text-sm text-primary-foreground/80">
+        © {new Date().getFullYear()} ONCG. All rights reserved.
+      </div>
+    </div>
 
-         <div className="flex flex-col md:flex-row justify-between items-center pt-2 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
-            <div className="text-sm text-primary-foreground/80">
-              © {new Date().getFullYear()} ONCG. All rights reserved.
-            </div>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <span className="text-sm text-primary-foreground/80">
-              Developed by <span className="font-semibold text-white">The Ingata Technologies Ltd</span>
-            </span>
-            
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://linkedin.com/company/oncg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
-                aria-label="Follow us on LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a
-                href="https://twitter.com/oncg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
-                aria-label="Follow us on Twitter"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="https://facebook.com/oncg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
-                aria-label="Follow us on Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-       </div>
+    <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+      <span className="text-sm text-primary-foreground/80">
+        Developed by <span className="font-semibold text-white">The Ingata Technologies Ltd</span>
+      </span>
+
+      {/* Social Links */}
+      <div className="flex items-center space-x-4">
+        <a
+          href="https://linkedin.com/company/oncg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
+          aria-label="Follow us on LinkedIn"
+        >
+          <Linkedin className="h-4 w-4" />
+        </a>
+        <a
+          href="https://twitter.com/oncg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
+          aria-label="Follow us on Twitter"
+        >
+          <Twitter className="h-4 w-4" />
+        </a>
+        <a
+          href="https://facebook.com/oncg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-primary transition-all duration-200"
+          aria-label="Follow us on Facebook"
+        >
+          <Facebook className="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </footer>
   )
