@@ -556,7 +556,7 @@ export default function InsightsPage() {
               </button>
             </div>
             {subscribeMsg && (
-              <p className={`mt-3 ${subscribeMsg.includes('successfully') ? 'text-green-100' : 'text-red-100'}`}>
+              <p className={`mt-3 ${subscribeMsg.includes('successfully') ? 'text-green-100' : 'text-red-500'}`}>
                 {subscribeMsg}
               </p>
             )}

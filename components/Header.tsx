@@ -416,7 +416,13 @@ export default function Header() {
                   >
                     Insights
                   </Link>
-
+   <Link
+                    href="/publications"
+                    onClick={closeMobileMenu}
+                    className="block p-3 font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                  >
+                    Publications
+                  </Link>
                   {/* Who We Are Dropdown */}
                   <div>
                     <button

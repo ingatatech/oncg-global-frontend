@@ -5,6 +5,7 @@ import { FileText, Download, Calendar, Search, ArrowRight } from "lucide-react"
 import { DecorativeBottomWave } from "@/components/DecorativeBottomWave"
 import api from "@/lib/axios"
 import PublicationModal from "@/components/publication-modal"
+import { subscribeNewsletter } from "@/lib/api"
 
 export interface Publication {
   id: string;
@@ -22,7 +23,9 @@ export default function PublicationsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [publications, setPublications] = useState<Publication[]>([]);
   const [loading, setLoading] = useState(true);
-  
+  const [email, setEmail] = useState("")
+  const [submitting, setSubmitting] = useState(false)
+  const [subscribeMsg, setSubscribeMsg] = useState<string | null>(null)
   // Modal state
   const [selectedPublication, setSelectedPublication] = useState<Publication | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -258,11 +261,37 @@ export default function PublicationsPage() {
                 type="email"
                 placeholder="Enter your email address"
                 className="flex-1 px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
-                Subscribe Now
+              <button 
+              onClick={async () => {
+                                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                                  setSubscribeMsg("Please enter a valid email")
+                                  return
+                                }
+                                try {
+                                  setSubmitting(true)
+                                  setSubscribeMsg(null)
+                                  await subscribeNewsletter(email)
+                                  setSubscribeMsg("Subscribed successfully!")
+                                  setEmail("")
+                                } catch (e) {
+                                  setSubscribeMsg("Subscription failed. Please try again.")
+                                } finally {
+                                  setSubmitting(false)
+                                }
+                              }}
+                              disabled={submitting}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+              {submitting ? "Subscribing..." : "Subscribe Now"}
               </button>
             </div>
+               {subscribeMsg && (
+              <p className={`mt-3 ${subscribeMsg.includes('successfully') ? 'text-green-100' : 'text-red-500'}`}>
+                {subscribeMsg}
+              </p>
+            )}
           </motion.div>
         </div>
         <DecorativeBottomWave/>
