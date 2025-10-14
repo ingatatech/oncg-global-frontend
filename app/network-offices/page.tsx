@@ -196,10 +196,16 @@ export default function NetworkOfficesPage() {
 
                     {/* Footer */}
                     <div className="flex items-center justify-between">
-                      <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
-                        Get Directions
-                        <ArrowUpRight className="w-4 h-4" />
-                      </button>
+                      <a
+  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.address)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1"
+>
+  Get Directions
+  <ArrowUpRight className="w-4 h-4" />
+</a>
+
                     </div>
                   </div>
                 </motion.div>
