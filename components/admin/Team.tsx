@@ -40,6 +40,7 @@ import api from "@/lib/axios";
 
 import { AnimatePresence, motion } from "framer-motion";
 import DeleteConfirmationModal from "../DeleteConfirmationModal";
+import RichTextEditor from "../ui/RichTextEditor";
 
 export interface TeamMember {
   id: string;
@@ -555,18 +556,16 @@ export default function TeamPage() {
                       className="border-slate-200 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Position *</label>
-                    <Input
-                      value={formData.position}
-                      onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                      placeholder="e.g., Senior Developer, Project Manager"
-                      required
-                      className="border-slate-200 focus:border-primary focus:ring-primary/20"
-                    />
-                  </div>
-
+                       <label className="block text-sm font-medium text-slate-700 mb-2">Position *</label>
+                   
+                   
+                          <RichTextEditor
+                          value={formData.position}
+                          onChange={(value) => setFormData(prev => ({ ...prev, position: value }))}
+                          placeholder="e.g., Head of Professional Practice"
+                          />
+                    </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">LinkedIn URL</label>
                     <Input

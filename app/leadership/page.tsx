@@ -6,6 +6,7 @@ import Link from "next/link";
 import { fetchTeam } from "@/lib/api";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { TeamMember } from "@/components/admin/Team";
+import ServicesClickModal from "@/components/ServicesClickModal";
 
 
 
@@ -288,17 +289,12 @@ export default function LeadershipPage() {
                 Connect with our leadership team to discuss how we can help transform your business and achieve your strategic goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <ServicesClickModal />
                 <a
                   href="/contact-us"
-                  className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 hover:shadow-lg hover:scale-105"
+                  className="bg-transparent border-2 border-primary text-white px-5 py-2 rounded-full font-semibold hover:bg-white/10 transition-all duration-200"
                 >
                   Contact Us Today
-                </a>
-                <a
-                  href="/services"
-                  className="bg-transparent border-2 border-white/20 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-200"
-                >
-                  Explore Our Services
                 </a>
               </div>
             </div>
