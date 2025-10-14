@@ -251,7 +251,7 @@ export default function LeadershipPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors duration-300">
                   {leader.name}
                 </h3>
-                <p className="text-sm font-semibold text-blue-600 mb-3" dangerouslySetInnerHTML={{ __html: leader.position}}/>
+                <p className="text-xl font-semibold text-blue-600 mb-3" dangerouslySetInnerHTML={{ __html: leader.position}}/>
             
               </div>
 

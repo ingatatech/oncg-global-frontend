@@ -27,7 +27,6 @@ import {
   Plus,
   X,
   User,
-  Briefcase,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -231,7 +230,7 @@ export default function TeamPage() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -260,19 +259,7 @@ export default function TeamPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-slate-600">Unique Positions</p>
-                <p className="text-2xl font-bold text-slate-900">
-                  {new Set(teamMembers.map((m) => m.position)).size}
-                </p>
-              </div>
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Briefcase className="h-5 w-5 text-orange-600" />
-              </div>
-            </div>
-          </div>
+         
         </div>
 
         {/* Search Filter */}
@@ -356,10 +343,7 @@ export default function TeamPage() {
                                   </div>
                                 </TableCell>
                                 <TableCell className="truncate">
-                                  <div className="flex items-center text-sm text-slate-600">
-                                    <Briefcase className="h-4 w-4 mr-1 text-slate-400" />
-                                    {member.position}
-                                  </div>
+                                  <div className="flex items-center text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: member.position}}/>
                                 </TableCell>
                                 <TableCell className="truncate">
                                   {member.linkedin ? (
@@ -462,7 +446,7 @@ export default function TeamPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-slate-900">{viewingMember.name}</h3>
-                    <p className="text-slate-600 font-medium">{viewingMember.position}</p>
+                    <p className="text-slate-600 font-medium" dangerouslySetInnerHTML={{ __html: viewingMember.position}}/>
                     {viewingMember.linkedin && (
                       <div className="flex items-center mt-3 space-x-3">
                         <a
