@@ -86,7 +86,7 @@ export default function ONCGResetPasswordPage() {
     setLoading(true)
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "https://oncg.api.oncg.rw/api"}/users/request-reset`,
+        `${process.env.NEXT_PUBLIC_API_URL || "https://api.web.oncgglobal.com/api"}/users/request-reset`,
         {
           method: "POST",
           headers: {
@@ -117,7 +117,7 @@ export default function ONCGResetPasswordPage() {
     setLoading(true)
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "https://oncg.api.oncg.rw/api"}/users/verify-otp`,
+        `${process.env.NEXT_PUBLIC_API_URL || "https://api.web.oncgglobal.com/api"}/users/verify-otp`,
         {
           method: "POST",
           headers: {
@@ -177,7 +177,7 @@ export default function ONCGResetPasswordPage() {
     setLoading(true)
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "https://oncg.api.oncg.rw/api"}/users/reset`,
+        `${process.env.NEXT_PUBLIC_API_URL || "https://api.web.oncgglobal.com/api"}/users/reset`,
         {
           method: "POST",
           headers: {
