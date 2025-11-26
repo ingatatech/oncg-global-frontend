@@ -10,6 +10,8 @@ import {
   UserCog,
   Crown,
   Rocket,
+  TrendingUp,
+  Star,
 } from "lucide-react";
 
 export const servicesData = [
@@ -66,11 +68,11 @@ export const servicesData = [
   {
     id: 6,
     slug: "actuarial-consulting",
-    title: "Actuarial Consulting",
+    title: "Actuarial Consulting Services",
     icon: Calculator,
     details:
       "Embark on a journey towards financial security with our unparalleled Actuarial Consulting services. Our team of seasoned professionals harnesses analytics and risk modeling to navigate complexities and ensure your peace of mind. We craft bespoke solutions that adapt to your evolving needs.",
-    externalUrl: "https://oncg.rw",
+    externalUrl: "https://contoursanalytics.rw/",
     color: "from-sky-500 to-blue-400",
   },
   {
@@ -100,7 +102,7 @@ export const servicesData = [
     icon: UserCog,
     details:
       "Revolutionize your workforce management with holistic HR solutions that prioritize talent, performance, and culture. From recruitment to engagement and retention, we provide strategies that optimize human capital and drive organizational growth.",
-    externalUrl: "https://www.skillshubinternational.com/",
+    externalUrl: "https://oncg.rw",
     color: "from-pink-500 to-rose-500"
   },
   {
@@ -122,5 +124,25 @@ export const servicesData = [
       "Ignite entrepreneurial potential with our development programs tailored for innovators and startups. From strategic guidance to funding readiness and mentorship, we help transform ideas into impactful ventures.",
     externalUrl: "https://www.skillshubinternational.com/",
     color: "from-red-500 to-orange-500",
+  },
+  {
+    id: 12,
+    slug: "business-intelligence-data-strategy",
+    title: "Business Intelligence & Data Strategy",
+    icon: TrendingUp,
+    details:
+      "Transform your data into strategic advantage with our comprehensive Business Intelligence and Data Strategy services. We help organizations harness the power of data through advanced analytics, strategic planning, and intelligent reporting solutions that drive informed decision-making and competitive advantage.",
+    externalUrl: "https://contoursanalytics.rw/",
+    color: "from-primary to-sky-500",
+  },
+  {
+    id: 13,
+    slug: "credit-rating",
+    title: "Credit Rating Services",
+    icon: Star,
+    details:
+      "Navigate financial markets with confidence through our professional Credit Rating services. Our expert analysis provides comprehensive risk assessments, creditworthiness evaluations, and rating methodologies that help stakeholders make informed investment and lending decisions.",
+    externalUrl: "https://contoursanalytics.rw/",
+    color: "from-emerald-500 to-teal-500",
   },
 ];
