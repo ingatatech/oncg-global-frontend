@@ -37,12 +37,12 @@ export default function Header() {
     { 
       name: "Oncg Ltd", 
       slug: "oncg-ltd",
-      description: "Audit & Financial Services",
+      description: "Audit& Consulting Services",
     },
     { 
       name: "Skills Hub International Ltd", 
       slug: "skills-hub-international",
-      description: "Training & Development",
+      description: "Training& Capacity Building",
     },
     { 
       name: "Cantours Analytics Ltd", 
