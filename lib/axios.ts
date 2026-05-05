@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_API_URL || "https://api.web.oncgglobal.com/api",
+	baseURL: process.env.NEXT_PUBLIC_API_URL || "https://oncgglobal.ingata-spro.com/api",
 });
 
 // Automatically attach JWT if present

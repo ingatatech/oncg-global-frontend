@@ -92,7 +92,7 @@ export const servicesData = [
     icon: GraduationCap,
     details:
       "Empower your team with expert-led training and capacity-building programs designed to elevate skills and foster innovation. Our programs blend theory with practical engagement, ensuring growth that translates into organizational success.",
-    externalUrl: "https://www.skillshubinternational.com/",
+    externalUrl: "https://skillshub-international.com/",
     color: "from-orange-500 to-red-400",
   },
   {
@@ -112,7 +112,7 @@ export const servicesData = [
     icon: Crown,
     details:
       "Empower current and future leaders with development programs that inspire transformation, innovation, and purpose-driven growth. We provide the tools and insights needed to cultivate strong, visionary leaders.",
-    externalUrl: "https://www.skillshubinternational.com/",
+    externalUrl: "https://skillshub-international.com/",
     color: "from-pink-500 to-rose-400",
   },
   {
@@ -122,7 +122,7 @@ export const servicesData = [
     icon: Rocket,
     details:
       "Ignite entrepreneurial potential with our development programs tailored for innovators and startups. From strategic guidance to funding readiness and mentorship, we help transform ideas into impactful ventures.",
-    externalUrl: "https://www.skillshubinternational.com/",
+    externalUrl: "https://skillshub-international.com/",
     color: "from-red-500 to-orange-500",
   },
   {

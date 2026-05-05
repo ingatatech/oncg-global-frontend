@@ -49,7 +49,7 @@ function SubsidiaryPageContent () {
       name: "Skills Hub International Ltd",
       tagline: "Empowering Africa Through Skills Development",
       description: "SKILLS HUB INTERNATIONAL (SHI) Ltd is a subsidiary of ONCG GLOBAL HOLDINGS LTD a multidisciplinary consulting group operating across African continent. SKILLS HUB INTERNATIONAL is registered in Rwanda since 2013 to offer a wide range of world-class training services, recruitment services and employment services to corporate and individual clients.It also offers cutting edge business and management customized training programs. Our training services Professional training services, Executive Training and in-house training services. Training services are provided via two schools namely School of Business Professionals and School of Business Executives.",
-      url: "https://www.skillshubinternational.com/",
+      url: "https://skillshub-international.com/",
       established: "2010",
       employees: "200+",
       offices: "8",
