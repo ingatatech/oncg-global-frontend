@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+// @ts-ignore: side-effect import of CSS handled by Next.js
 import "./globals.css";
 
 import LayoutShell from "@/components/LayoutShell";

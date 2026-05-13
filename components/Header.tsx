@@ -71,8 +71,8 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">
+          <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-6 text-sm xl:text-base">
+            <Link href="/" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Home
             </Link>
 
@@ -80,7 +80,7 @@ export default function Header() {
             <div className="relative group">
               <button
                 onClick={toggleServicesDropdown}
-                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2"
+                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 whitespace-nowrap"
               >
                 <span>Services</span>
                 <ChevronDown className="h-4 w-4" />
@@ -158,7 +158,7 @@ export default function Header() {
             <div className="relative group">
               <button
                 onClick={toggleSubsidiariesDropdown}
-                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2"
+                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 whitespace-nowrap"
               >
                 <span>Subsidiaries</span>
                 <ChevronDown className="h-4 w-4" />
@@ -203,15 +203,15 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/network-offices" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/network-offices" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Network Offices
             </Link>
 
-            <Link href="/insights" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/insights" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Insights
             </Link>
 
-            <Link href="/publications" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/publications" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Publications
             </Link>
 
@@ -219,7 +219,7 @@ export default function Header() {
             <div className="relative group">
               <button
                 onClick={toggleWhoWeAreDropdown}
-                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2"
+                className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 whitespace-nowrap"
               >
                 <span>Who we are</span>
                 <ChevronDown className="h-4 w-4" />
@@ -257,11 +257,11 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/contact-us" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/contact-us" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Contact Us
             </Link>
 
-            <Link href="/admin/login" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/admin/login" className="whitespace-nowrap text-foreground hover:text-primary transition-colors">
               Sign In
             </Link>
           </nav>
