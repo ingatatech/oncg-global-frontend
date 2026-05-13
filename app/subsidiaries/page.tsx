@@ -66,11 +66,11 @@ function SubsidiaryPageContent () {
         "Digital learning platform"
       ]
     },
-    "cantours-analytics": {
-      name: "Cantours Analytics Ltd",
+    "contours-analytics": {
+      name: "Contours Analytics Ltd",
       tagline: "Data-Driven Business Intelligence",
       description: "We are a leading provider of comprehensive data analytics and actuarial services. With a team of highly skilled professionals and cutting-edge technology, we empower businesses to make informed decisions and mitigate risks effectively. Our integrated approach combines advanced statistical modeling, predictive analytics, and actuarial expertise to deliver actionable insights across various industries.",
-      url: "https://contoursanalytics.rw/",
+      url: "https://contoursanalytics.com/",
       established: "2015",
       employees: "150+",
       offices: "5",

@@ -45,8 +45,8 @@ export default function Header() {
       description: "Training& Capacity Building",
     },
     { 
-      name: "Cantours Analytics Ltd", 
-      slug: "cantours-analytics",
+      name: "Contours Analytics Ltd", 
+      slug: "contours-analytics",
       description: "Data & Analytics Solutions",
     },
     { 

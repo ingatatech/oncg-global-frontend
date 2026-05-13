@@ -62,7 +62,7 @@ export const servicesData = [
     icon: BarChart4,
     details:
       "Unlock the power of data with our cutting-edge Data Analytics solutions. Dive deep into your business metrics, uncover hidden patterns, and gain actionable insights to propel your organization forward. From predictive analytics to data visualization, we equip you with the knowledge to make informed decisions and drive sustainable growth.",
-    externalUrl: "https://contoursanalytics.rw/",
+    externalUrl: "https://contoursanalytics.com/",
     color: "from-purple-500 to-indigo-500",
   },
   {
@@ -72,7 +72,7 @@ export const servicesData = [
     icon: Calculator,
     details:
       "Embark on a journey towards financial security with our unparalleled Actuarial Consulting services. Our team of seasoned professionals harnesses analytics and risk modeling to navigate complexities and ensure your peace of mind. We craft bespoke solutions that adapt to your evolving needs.",
-    externalUrl: "https://contoursanalytics.rw/",
+    externalUrl: "https://contoursanalytics.com/",
     color: "from-sky-500 to-blue-400",
   },
   {
@@ -132,7 +132,7 @@ export const servicesData = [
     icon: TrendingUp,
     details:
       "Transform your data into strategic advantage with our comprehensive Business Intelligence and Data Strategy services. We help organizations harness the power of data through advanced analytics, strategic planning, and intelligent reporting solutions that drive informed decision-making and competitive advantage.",
-    externalUrl: "https://contoursanalytics.rw/",
+    externalUrl: "https://contoursanalytics.com/",
     color: "from-primary to-sky-500",
   },
   {
@@ -142,7 +142,7 @@ export const servicesData = [
     icon: Star,
     details:
       "Navigate financial markets with confidence through our professional Credit Rating services. Our expert analysis provides comprehensive risk assessments, creditworthiness evaluations, and rating methodologies that help stakeholders make informed investment and lending decisions.",
-    externalUrl: "https://contoursanalytics.rw/",
+    externalUrl: "https://contoursanalytics.com/",
     color: "from-emerald-500 to-teal-500",
   },
 ];
